@@ -16,6 +16,10 @@ int main(int argc, char* argv[]) {
 		printf(argv[i]);
 		printf("\n");
 	}*/
+	if (argc < NumArgment) {
+		TextureConverter::OutPutUsage();
+		return 0;
+	}
 	assert(argc >= NumArgment);
 
 	//Comライブラリの初期化
@@ -24,12 +28,17 @@ int main(int argc, char* argv[]) {
 
 	//テクスチャコンバーター
 	TextureConverter converter;
+	//オプションの数
+	int numOption = argc - NumArgment;
+	//オプション配列
+	char** options = argv + NumArgment;
+
 
 	//テクスチャ変換
-	converter.ConverterTextureWICToDDS(argv[kFilePath]);
+	converter.ConverterTextureWICToDDS(argv[kFilePath],numOption,options);
 
 	//COMライブラリの終了
 	CoUninitialize();
-	system("pause");
+	//system("pause");
 	return 0;
 }

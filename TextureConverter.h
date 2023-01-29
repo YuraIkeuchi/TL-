@@ -10,7 +10,9 @@ using namespace DirectX;
 using namespace std;         //  名前空間指定
 //テクスチャコンバーター
 class TextureConverter {
-
+public:
+	//使用方法を出力する
+	static void OutPutUsage();
 private:
 	//テクスチャファイル読み込み
 	void LoadWICTextureFromFile(const string& filePath);
@@ -19,10 +21,11 @@ private:
 	//フォルダパスとファイル名を分離する
 	void SeparateFilePath(wstring& filePath);
 	//DDSテクスチャとしてファイル書き出し
-	void SaveDDSTextureToFile();
+	void SaveDDSTextureToFile(int numOptions = 0, char* options[] = nullptr);
+
 public:
 	//テクスチャをWICからDDSに変換する
-	void ConverterTextureWICToDDS(const string& filePath);
+	void ConverterTextureWICToDDS(const string& filePath,int numOptions = 0,char* options[] = nullptr);
 
 	//メンバ変数
 private:
