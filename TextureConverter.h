@@ -21,7 +21,7 @@ private:
 	//フォルダパスとファイル名を分離する
 	void SeparateFilePath(wstring& filePath);
 	//DDSテクスチャとしてファイル書き出し
-	void SaveDDSTextureToFile(int numOptions = 0, char* options[] = nullptr);
+	void SaveDDSTextureToFile(int numOptions, char* options[]);
 
 public:
 	//テクスチャをWICからDDSに変換する

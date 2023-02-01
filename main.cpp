@@ -20,7 +20,8 @@ int main(int argc, char* argv[]) {
 		TextureConverter::OutPutUsage();
 		return 0;
 	}
-	assert(argc >= NumArgment);
+
+	//assert(argc >= NumArgment);
 
 	//Comƒ‰ƒCƒuƒ‰ƒŠ‚Ì‰Šú‰»
 	HRESULT hr = CoInitializeEx(nullptr, COINIT_MULTITHREADED);
